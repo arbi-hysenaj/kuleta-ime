@@ -3,11 +3,16 @@
     --primary-2: #dca15d;
     --primary-3: #dabb94;
     --primary-4: #f3dabc;
+    --primary-5: #fefaf6;
+    --neutral-1: #2c2c2c;
   
 }
 
 body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--neutral-1);
+    background-color: var(--primary-5);
 }
 
 #navbar {
