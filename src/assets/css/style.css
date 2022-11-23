@@ -73,3 +73,37 @@ body {
     background-color: var(--primary-3);
     transform: translate(0.8px, 0.8px);
 }
+
+h1, h2 {
+    text-align: center;
+    margin-top: 35px ;
+    color: var(--neutral-1);
+}
+
+.container-data{
+    align-items: center;
+    display: block;
+    text-align: center;
+}
+
+.btn-default{
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 9px 100px 0px 100px;
+    text-decoration: none;
+    max-width: 120px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    color: var(--neutral-1);
+    background-color: #efdfca;
+}
+.market{
+    margin:0
+}
+
+.market-cap{
+margin-right: 20%;
+}
