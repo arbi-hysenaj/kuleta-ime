@@ -5,7 +5,6 @@
     --primary-4: #f3dabc;
     --primary-5: #fefaf6;
     --neutral-1: #2c2c2c;
-  
 }
 
 body {
@@ -81,9 +80,14 @@ h1, h2 {
 }
 
 .container-data{
-    align-items: center;
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.market-info{
+    width: 985px;
+    display: flex;
+    margin-top: 40px;
 }
 
 .btn-default{
@@ -99,10 +103,75 @@ h1, h2 {
     color: var(--neutral-1);
     background-color: #efdfca;
 }
+
 .market{
     margin:0
 }
 
-.market-cap{
-margin-right: 20%;
+.market-volume{
+    margin-left: auto;
+}
+
+.container-table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+table{
+    table-layout: fixed;
+    /* border: 1px solid rgb(173, 173, 173); */
+    border-radius: 5px;
+    width: 985px;
+    border-collapse: collapse;
+}
+
+thead th:nth-child(1) {
+    width: 48px;
+}
+  
+thead th:nth-child(2) {
+    width: 180px;
+}
+  
+thead th:nth-child(3) {
+    width: 150px;
+}
+  
+thead th:nth-child(4) {
+    width: 150px;
+}
+
+thead th:nth-child(5) {
+    width: 160px;
+}
+  
+thead th:nth-child(6) {
+    width: 150px;
+}
+
+th{
+    padding: 10px 0px 10px 0px;
+    text-align: left;
+}
+
+thead th{
+    font-weight: 100;
+    font-size: 14px;
+    color: rgb(160, 160, 160);
+}
+
+tbody tr{
+    border-top: 1px solid rgb(232, 232, 232);
+    font-weight: 300;
+}
+
+td{
+    padding: 10px 0px 10px 0px;
+}
+
+caption{
+    text-align: left;
+    margin-bottom: 20px;
 }

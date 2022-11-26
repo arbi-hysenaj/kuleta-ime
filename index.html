@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/src/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,21 +22,23 @@
     </nav>
 
     <h1>Track your Coin Price in Real Time</h1>
-    <h2>With Kuleta, you can be in charge of your Cryptocurrency Investments. Everything in one interface. </h2>   
-  
-    <div class="container-data">
-        <div class="btn-default market-cap">
-            <h3 class="market">Market Cap</h3>
-            <p><span>..</span></p>
-        </div>
+    <h2>With Kuleta, you can be in charge of your Cryptocurrency Investments. Everything in one interface. </h2>  
 
-        <div class="btn-default market-volume">
-            <h3 class="market">Volume 24h</h3>
-            <p><span>..</span></p>
+    <div class="container-data">
+        <div class="market-info">
+            <div class="btn-default market-cap">
+                <h3 class="market">Market Cap</h3>
+                <p><span>..</span></p>
+            </div>
+
+            <div class="btn-default market-volume">
+                <h3 class="market">Volume 24h</h3>
+                <p><span>..</span></p>
+            </div>
         </div>
     </div>
 
-    <div class="container-list">
+    <div class="container-table">
         <table>
             <caption>Cryptocurrencies</caption>
                 <thead>
@@ -52,7 +54,15 @@
 
                 <tbody>
                     <tr>
-                        <td>1</td>
+                        <th scope="row">1</th>
+                        <td>Bitcoin</td>
+                        <td>1.4%</td>
+                        <td>16000$</td>
+                        <td>1345353344$</td>
+                        <td>34000002$</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
                         <td>Bitcoin</td>
                         <td>1.4%</td>
                         <td>16000$</td>
