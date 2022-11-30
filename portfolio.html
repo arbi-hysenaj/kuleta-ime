@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/src/assets/css/portfolio.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,7 +28,8 @@
                 <div class="center-button">
                     <li class="btn-list">Add Portfolio</li>
                 </div>
-                <div class="line-break"></div>
+                <div class="line-break">
+                </div>
             </ul>
         </div>
 
@@ -37,7 +38,7 @@
         </div>
 
         <div class="portfolios-list">
-            <ul>
+            <ul id="asset-list">
             <li><img src="/src/assets/images/portfolio_aicon.png" width="21px">&nbsp; All Assets</li>
             </ul>
         </div>
@@ -47,6 +48,24 @@
             
         </div>
     </div>
+
+    <div class="bg-popup">
+        <div class="popup-content">
+            <h2>Add New Portfolio</h2>
+            <form id="new-portfolio">
+                <label for="portfolio-name">PORTFOLIO NAME</label>
+                <input id="portfolio-name" type="text" placeholder="Portfolio Name" autocomplete="off">
+            <div class="popup-buttons">
+                <input type="submit" value="SAVE" id="save-button" class="btn-save">
+                <ul>
+                    <li class="btn-cancel">CANCEL</li>
+                </ul>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/src/helpers/portfolio-form.js"></script>
     
 
 </body>
