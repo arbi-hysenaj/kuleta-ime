@@ -28,14 +28,16 @@
     align-content: center;
 }
 
-
 ul{
     list-style-type: none;
-    padding-left: 0px;
+}
+.add-portfolio ul {
+    padding-left: 30px;
 }
 
 li{
     display: block;
+    margin-bottom: 15px;
 }
 
 .center-button{
@@ -75,7 +77,6 @@ li{
     }
 
 .portfolios-list ul{
-    /* margin-left:65px; */
     justify-content: center;    
     justify-items: center;
 }
@@ -86,4 +87,126 @@ li{
     font-size: 19px;
     width: 300px;
     color: var(--neutral-1);
+}
+
+.bg-popup{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0 , 0, 0.4);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    /* display: none; */
+}
+
+.bg-popup.show{
+    transform: translateX(0);
+  }
+
+.popup-content{
+    width: 400px;
+    height: 280px;
+    background-color: #d0cece;
+    border-radius: 18px;
+}
+
+label{
+    display: block;
+    margin: 35px 0px 10px 35px ;
+    font-size: 14px;
+    font-weight: 600;
+    
+}
+#portfolio-name{
+    display:block;
+    margin: 10px 0px 0px 20px;
+    padding-right: 80px;
+}
+
+input:not(.btn-save) {
+    margin-left: 15px;
+    font-size: 16px;
+    margin-bottom: 1.7em;
+    padding: 0.75em 0.5em;
+    background-color: var(--primary-4);
+    width: 100%;
+    max-width: 250px;
+    border: none;
+    border-left: 7px solid #a7a7a7;
+    border-radius: 9px;
+  }
+
+input:not(.btn-save):focus {
+    outline: none;
+    border-left: 7px solid var(--primary-2);
+  }
+
+::placeholder {
+    color: var(--primary-3);
+  }
+
+.popup-buttons{
+    display: block;
+    margin-top: 35px;
+    justify-content:right;
+}
+
+.btn-save{
+    border-radius: 18px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 21px;
+    text-decoration: none;
+    max-width: 120px;
+    text-align: center;
+    transition: background-color 220ms, transform 220ms;
+    border: none;
+    color: white;
+    background-color:var(--primary-1)
+}
+
+.btn-save:hover{
+    background-color: var(--primary-2);
+}
+
+.btn-save:active{
+    color: var(--primary-1);
+    background-color: var(--primary-3);
+    transform: translate(0.8px, 0.8px);
+}
+.popup-buttons ul{
+    display: inline-block;
+    padding: 0;
+    
+}
+.btn-cancel {
+    border-radius: 18px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+    text-decoration: none;
+    max-width: 120px;
+    text-align: center;
+    transition: background-color 220ms, transform 220ms;
+    border: none;
+    color: white;
+    background-color:#a7a7a7;
+}
+
+
+.btn-cancel:hover{
+    background-color: #b8b8b8;
+}
+
+.btn-cancel:active{
+    color: white;
+    background-color: #848484;
+    transform: translate(0.8px, 0.8px);
 }
