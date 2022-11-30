@@ -17,7 +17,7 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=mark
         tableContent.insertAdjacentHTML("beforeend", `<tr>
              <th scope="row">${item.market_cap_rank}</th>
              <td>${item.name}</td>
-             <td>${parseFloat(item.price_change_percentage_24h).toFixed(2)}</td>
+             <td>${parseFloat(item.price_change_percentage_24h).toFixed(2)} %</td>
              <td>${item.current_price}$</td>
              <td>${item.market_cap.toLocaleString()} $</td>
              <td>${item.total_volume.toLocaleString()} $</td>
