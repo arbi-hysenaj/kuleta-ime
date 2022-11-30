@@ -1,0 +1,48 @@
+:root {
+    --primary-1: #e49b4d;
+    --primary-2: #dca15d;
+    --primary-3: #dabb94;
+    --specific-1: #efae5f;
+    --primary-4: #f3dabc;
+    --primary-5: #fefaf6;
+    --neutral-1: #2c2c2c;
+}
+
+.tracking-container{
+    display: flex;
+    justify-content: center;
+    margin: 15px 0px 5px 15px;
+}
+
+.current-net-worth{
+    font-size: 35px;
+    max-height: 40px;
+    margin-top: 40px;
+}
+
+.add-transaction{
+margin-left: auto;
+margin-right: 80px;
+margin-top: 50px;
+max-height: 20px;
+}
+
+.add-transaction a{
+text-decoration: none;
+font-weight: 600;
+color:var(--primary-1);
+text-align: center;
+padding: 3px 0px;
+
+}
+
+.add-transaction:hover a{
+    text-decoration: none;
+    color: var(--specific-1);
+}
+
+.all-time-pl{
+    display: block;
+    padding-left: 15px;
+    font-size: 13px;
+}
