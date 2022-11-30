@@ -8,6 +8,7 @@
     <link rel="icon" href="/src/assets/images/bitcoin-wallet__1.png">
     <link rel="stylesheet" href="/src/assets/css/style.css">
     <link rel="stylesheet" href="/src/assets/css/portfolio.css">
+    <link rel="stylesheet" href="/src/assets/css/trackingdata.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;600&display=swap" rel="stylesheet">
@@ -25,29 +26,38 @@
     <div id="page-grid">
         <div class="add-portfolio">
             <ul>
-                <div class="center-button">
-                    <li class="btn-list">Add Portfolio</li>
-                </div>
-                <div class="line-break">
-                </div>
+            <div class="center-button">
+                <li class="btn-list">Add Portfolio</li>
+            </div>
+            <div class="line-break">
+            </div>
             </ul>
         </div>
 
-        <div class="tracking-data">
-            
+        <div class="data-container">
+            <div class="tracking-data active" id="all-assets">
+                <div class="tracking-container">
+                    <div class="current-net-worth">
+                        0$
+                    </div>
+                    <div class="add-transaction">
+                    <a href="">Add Transaction</a> 
+                    </div>
+                </div>
+                <div class="all-time-pl">
+                    0%
+                </div>
+            </div>
         </div>
 
         <div class="portfolios-list">
             <ul id="asset-list">
-            <li><img src="/src/assets/images/portfolio_aicon.png" width="21px">&nbsp; All Assets</li>
+            <li><img src="/src/assets/images/portfolio_aicon.png" width="21px">&nbsp;&nbsp;&nbsp;<button class="portfolio-list active" data-content="#all-assets">All Assets</button></li>
             </ul>
         </div>
-   
+   </div>
 
-        <div class="transactions-data">
-            
-        </div>
-    </div>
+
 
     <div class="bg-popup">
         <div class="popup-content">

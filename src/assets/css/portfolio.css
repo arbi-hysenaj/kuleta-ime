@@ -19,6 +19,19 @@
     
 }
 
+.tracking-data.active{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display:block;
+    margin-top: 30px;
+}
+
+.tracking-data{
+    display: none;
+}
+
 .add-portfolio{
     display: flex;
     justify-content: center;
@@ -28,16 +41,12 @@
     align-content: center;
 }
 
-ul{
-    list-style-type: none;
-}
 .add-portfolio ul {
     padding-left: 30px;
 }
 
-li{
-    display: block;
-    margin-bottom: 15px;
+.portfolio-list{
+    all: unset;
 }
 
 .center-button{
@@ -79,6 +88,8 @@ li{
 .portfolios-list ul{
     justify-content: center;    
     justify-items: center;
+    list-style-type: none;
+
 }
 
 .portfolios-list li{
@@ -87,7 +98,28 @@ li{
     font-size: 19px;
     width: 300px;
     color: var(--neutral-1);
+    display: block;
+    margin-bottom: 25px;
+    margin-top: 10px;
 }
+
+.portfolios-list .portfolio-list{
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 0.9;
+}
+
+.portfolios-list .portfolio-list:hover{
+   color: var(--primary-1);
+}
+
+.portfolios-list .portfolio-list.active{
+    border-left: 4px solid var(--primary-1);
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
 
 .bg-popup{
     width: 100%;
@@ -99,7 +131,6 @@ li{
     justify-content: center;
     align-items: center;
     transform: translateX(-100%);
-    /* display: none; */
 }
 
 .bg-popup.show{
@@ -152,6 +183,10 @@ input:not(.btn-save):focus {
     display: block;
     margin-top: 35px;
     justify-content:right;
+    
+}
+.popup-buttons li{
+    list-style-type: none;
 }
 
 .btn-save{
