@@ -38,7 +38,7 @@
             <div class="tracking-data active" id="all-assets">
                 <div class="tracking-container">
                     <div class="current-net-worth">
-                        0$
+                        1000$
                     </div>
                     <div class="add-transaction">
                     <a href="">Add Transaction</a> 
@@ -47,7 +47,35 @@
                 <div class="all-time-pl">
                     0%
                 </div>
+
+                <div class="transaction-table">
+                    <table>
+                        <caption>HOLDINGS</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">NAME</th>
+                                    <th scope="col">AMOUNT</th>
+                                    <th scope="col">PRICE</th>
+                                    <th scope="col">TOTAL</th>
+                                    <th scope="col">ALL TIME P/L</th>
+                                </tr>
+                            </thead>
+            
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Bitcoin</th>
+                                    <td>1</td>
+                                    <td>16230 $</td>
+                                    <td>24523 $</td>
+                                    <td>13,5 %</td>
+                                </tr>
+                            </tbody>
+                    
+                    </table>
+                </div>
+
             </div>
+
         </div>
 
         <div class="portfolios-list">
@@ -59,12 +87,15 @@
 
 
 
+
+
+
     <div class="bg-popup">
         <div class="popup-content">
             <h2>Add New Portfolio</h2>
             <form id="new-portfolio">
                 <label for="portfolio-name">PORTFOLIO NAME</label>
-                <input id="portfolio-name" type="text" placeholder="Portfolio Name" autocomplete="off">
+                <input id="portfolio-name" type="text" placeholder="Portfolio Name" autocomplete="off" autofocus>
             <div class="popup-buttons">
                 <input type="submit" value="SAVE" id="save-button" class="btn-save">
                 <ul>

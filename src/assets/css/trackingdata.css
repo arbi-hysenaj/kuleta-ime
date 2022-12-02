@@ -11,7 +11,7 @@
 .tracking-container{
     display: flex;
     justify-content: center;
-    margin: 15px 0px 5px 15px;
+    margin: 15px 0px 5px 0px;
 }
 
 .current-net-worth{
