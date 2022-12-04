@@ -147,7 +147,7 @@
 .popup-content{
     width: 400px;
     height: 280px;
-    background-color: var(--primary-5);
+    background-color:  #F5F5F5;
     border-radius: 18px;
 }
 
@@ -164,7 +164,7 @@ label{
     padding-right: 80px;
 }
 
-input:not(.btn-save) {
+.bg-popup input:not(.btn-save) {
     margin-left: 15px;
     font-size: 16px;
     margin-bottom: 1.7em;
@@ -177,12 +177,12 @@ input:not(.btn-save) {
     border-radius: 9px;
   }
 
-input:not(.btn-save):focus {
+.bg-popup input:not(.btn-save):focus {
     outline: none;
     border-left: 7px solid var(--primary-2);
   }
 
-::placeholder {
+.bg-popup::placeholder {
     color: var(--primary-3);
   }
 

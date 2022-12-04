@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/src/assets/css/style.css">
     <link rel="stylesheet" href="/src/assets/css/portfolio.css">
     <link rel="stylesheet" href="/src/assets/css/trackingdata.css">
+    <link rel="stylesheet" href="/src/assets/css/transactionpopup.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;600&display=swap" rel="stylesheet">
@@ -41,7 +42,9 @@
                         1000$
                     </div>
                     <div class="add-transaction">
-                    <a href="">Add Transaction</a> 
+                        <ul>
+                            <li>Add Transaction</li>
+                        </ul>  
                     </div>
                 </div>
                 <div class="all-time-pl">
@@ -86,6 +89,36 @@
    </div>
 
 
+    <div class="transaction-popup">
+        <div class="transaction-popup-content">
+            <h2>Add Transaction</h2>
+            <div class="transaction-buttons">
+                <button id="buy" class="transaction-button buy">BUY</button>
+                <button id="sell" class="transaction-button sell">SELL</button>
+            </div>
+            <form id="new-transaction">
+                <h3>PORTFOLIO</h3>
+                <select name="portfolio" id="portfolio-dropdown">
+                           <!-- To add with Javascript-->
+                </select>
+                <h3>COIN</h3>
+                <input type="search" id="coin-search" class="textfield" placeholder="Search">
+                <ul id="results-coinlist">
+
+                </ul>
+                <label for="amount">AMOUNT</label>
+                <input id="amount" type="number" placeholder="Amount" autocomplete="off">
+                <label for="purchase-price">PRICE</label>
+                <input id="purchase-price" type="number" placeholder="Price" autocomplete="off" >
+                <div class="popup-buttons">
+                    <input type="submit" value="SAVE" id="save-button" class="btn-save">
+                        <ul>
+                            <li class="btn-cancel-transaction">CANCEL</li>
+                        </ul>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
 
@@ -107,6 +140,8 @@
     </div>
 
     <script src="/src/helpers/portfolio-form.js"></script>
+    <script src="/src/helpers/addportfolio.js"></script>
+    <script src="/src/helpers/addtransaction.js"></script>
     
 
 </body>

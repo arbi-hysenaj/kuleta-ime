@@ -22,12 +22,17 @@
 
 .add-transaction{
 margin-left: auto;
-margin-right: 80px;
+margin-right: 150px;
 margin-top: 50px;
-max-height: 20px;
+/* max-height: 20px; */
+
+}
+.add-transaction ul{
+    list-style-type: none;
+    overflow: hidden;
 }
 
-.add-transaction a{
+.add-transaction li{
 text-decoration: none;
 font-weight: 600;
 color:var(--primary-1);
@@ -36,9 +41,10 @@ padding: 3px 0px;
 
 }
 
-.add-transaction:hover a{
+.add-transaction:hover li{
     text-decoration: none;
     color: var(--specific-1);
+    cursor: pointer;
 }
 
 .all-time-pl{
