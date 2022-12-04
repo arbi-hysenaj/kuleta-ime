@@ -1,0 +1,162 @@
+:root {
+    --primary-1: #e49b4d;
+    --primary-2: #dca15d;
+    --primary-3: #dabb94;
+    --specific-1: #efae5f;
+    --primary-4: #f3dabc;
+    --primary-5: #fefaf6;
+    --neutral-1: #2c2c2c;
+}
+
+.transaction-popup{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0 , 0, 0.4);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+}
+
+.transaction-popup.show{
+    transform: translateX(0);
+  }
+
+.transaction-popup-content{
+    width: 420px;
+    height: 560px;
+    background-color: #F5F5F5;
+    border-radius: 18px;
+}
+
+.transaction-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.transaction-button{
+    border-radius: 20px;
+    min-width: 80px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 21px;
+    text-decoration: none;
+    border: 1px solid rgb(217, 214, 214);
+    max-width: 120px;
+    text-align: center;
+    transition: background-color 220ms, transform 220ms;
+    color: var(--neutral-1);
+    background-color: #F5F5F5;
+}
+
+.transaction-button:hover.buy{
+    color: rgb(0, 179, 0);
+}
+.transaction-button.buy.active{
+    border: 1px solid rgb(0, 179, 0);
+    color: rgb(0, 179, 0);
+}
+.transaction-button:hover.sell{
+    color: rgb(214, 0, 0);
+}
+.transaction-button.sell.active{
+    border: 1px solid rgb(214, 0, 0);
+    color: rgb(214, 0, 0);
+}
+
+#new-transaction h3{
+    margin-left: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#new-transaction select{
+    display: block;
+    margin-left: 10px;
+    padding: 8px 3px 8px 9px;
+    min-width: 400px;
+    max-width: 400px;
+    font-size: 13.9px;
+    border-radius: 9px;
+    background-color: #f5f5f5;
+    border: 1px solid rgb(217, 214, 214);
+    color: rgb(119, 113, 113);
+}
+
+.textfield{
+    display: block;
+    margin: 0px;
+    padding: 9px 3px 9px 12px;
+    min-width: 400px;
+    max-width: 400px;
+    border-radius: 9px;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    border: 1px solid rgb(217, 214, 214);
+    margin-left: 10px;
+}
+
+#new-transaction label{
+    font-size: 13px;
+    margin: 0px 0px 10px 20px;
+}
+
+#amount{
+    display: block;
+    padding: 9px 3px 9px 12px;
+    min-width: 384px;
+    max-width: 384px;
+    border-radius: 9px;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    border: 1px solid rgb(217, 214, 214);
+    margin-left: 9px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+#purchase-price{
+    display: block;
+    margin-top: 10px;
+    padding: 9px 3px 9px 12px;
+    min-width: 384px;
+    max-width: 384px;
+    border-radius: 9px;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    border: 1px solid rgb(217, 214, 214);
+    margin-left: 10px;
+    margin-bottom: 14px;
+}
+
+
+.btn-cancel-transaction {
+    border-radius: 18px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+    text-decoration: none;
+    max-width: 120px;
+    text-align: center;
+    transition: background-color 220ms, transform 220ms;
+    border: none;
+    color: white;
+    background-color:#a7a7a7;
+}
+
+.btn-cancel-transaction:hover{
+    background-color: #b8b8b8;
+}
+
+.btn-cancel-transaction:active{
+    color: white;
+    background-color: #848484;
+    transform: translate(0.8px, 0.8px);
+}
