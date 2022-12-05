@@ -102,8 +102,8 @@
                            <!-- To add with Javascript-->
                 </select>
                 <h3>COIN</h3>
-                <input type="search" id="coin-search" class="textfield" placeholder="Search">
-                <ul id="results-coinlist">
+                <input type="search" id="coin-search" class="textfield" placeholder="Search" autocomplete="off">
+                <ul class="results-coinlist">
 
                 </ul>
                 <label for="amount">AMOUNT</label>
@@ -141,7 +141,7 @@
 
     <script src="/src/helpers/portfolio-form.js"></script>
     <script src="/src/helpers/addportfolio.js"></script>
-    <script src="/src/helpers/addtransaction.js"></script>
+    <script type="module" src="/src/helpers/addtransaction.js"></script>
     
 
 </body>
