@@ -38,7 +38,7 @@
         <div class="data-container">
             <div class="tracking-data active" id="all-assets">
                 <div class="tracking-container">
-                    <div class="current-net-worth">
+                    <div id="total-worth" class="current-net-worth">
                         1000$
                     </div>
                     <div class="add-transaction">
@@ -47,7 +47,7 @@
                         </ul>  
                     </div>
                 </div>
-                <div class="all-time-pl">
+                <div id="all-pl" class="all-time-pl">
                     0%
                 </div>
 
@@ -68,7 +68,7 @@
                                 <tr>
                                     <th scope="row">Bitcoin</th>
                                     <td>1</td>
-                                    <td>16230 $</td>
+                                    <td id="current-price">16230 $</td>
                                     <td>24523 $</td>
                                     <td>13,5 %</td>
                                 </tr>
@@ -96,16 +96,17 @@
                 <button id="buy" class="transaction-button buy">BUY</button>
                 <button id="sell" class="transaction-button sell">SELL</button>
             </div>
-            <form id="new-transaction">
+            <form id="new-transaction" autocomplete="off">
                 <h3>PORTFOLIO</h3>
                 <select name="portfolio" id="portfolio-dropdown">
-                           <!-- To add with Javascript-->
                 </select>
                 <h3>COIN</h3>
-                <input type="search" id="coin-search" class="textfield" placeholder="Search" autocomplete="off">
-                <ul class="results-coinlist">
+                
+                <div class="autocomplete">
+                    <input id="search-coin" type="text" name="coin" placeholder="Coin">
+                </div>
 
-                </ul>
+
                 <label for="amount">AMOUNT</label>
                 <input id="amount" type="number" placeholder="Amount" autocomplete="off">
                 <label for="purchase-price">PRICE</label>
@@ -115,6 +116,7 @@
                         <ul>
                             <li class="btn-cancel-transaction">CANCEL</li>
                         </ul>
+
                 </div>
             </form>
         </div>
@@ -139,9 +141,13 @@
         </div>
     </div>
 
-    <script src="/src/helpers/portfolio-form.js"></script>
-    <script src="/src/helpers/addportfolio.js"></script>
+    <script type="module" src="/src/helpers/addportfolio.js"></script>
     <script type="module" src="/src/helpers/addtransaction.js"></script>
+    <script type="module">
+        import autocomplete from "./src/helpers/autocomplete.js"
+        import {coins} from "./src/helpers/coins.js"
+        autocomplete(document.getElementById("search-coin"), coins);        
+    </script>
     
 
 </body>
