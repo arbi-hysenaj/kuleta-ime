@@ -2,20 +2,8 @@ import {coins} from "./coins.js"
 
 const buyButton = document.querySelector("#buy");
 const sellButton = document.querySelector("#sell");
-
-
-const updateTransactions = () => {
-    const transactions = [{
-        id: 1,
-        walletId: 1,
-        type: 'buy',
-        coin: 'btc',
-        buyPrice: 10000,
-        amount: 1,
-    }]   
-    
- storage.setItem('transactions', JSON.stringify(transactions))
-}
+let storage = window.localStorage;
+let transactionStorage = storage.getItem('transactions');
 
 buyButton.addEventListener("click", () => {
     if(sellButton.classList.contains("active")){
@@ -41,26 +29,34 @@ buttonCancelTransaction.addEventListener("click", () => {
     document.querySelector(".transaction-popup").classList.remove("show");
 })
 
-
-const coinResults = document.querySelector(".results-coinlist");
-const coinSearch = document.querySelector("#coin-search");
-
-const render = (query = "") => {
-    const cleanedupQuery = query.trim().toLowerCase();
-    const filtered = coins.filter(item => item.coin.toLowerCase().includes(cleanedupQuery));
-
-    coinResults.innerHTML = "";
-    filtered.forEach(item =>{
-        coinResults.insertAdjacentHTML("beforeend", `<li>${item.coin}</li>`)
-    });
+const updateTransactions = (transaction) => {
+    if(!transactionStorage){
+        transactionStorage= [transaction]
+    }else{
+        transactionStorage = JSON.parse(transactionStorage);
+        transactionStorage.push(transaction)
+    }
+    transactionStorage = JSON.stringify(transactionStorage);
+    storage.setItem('transactions', transactionStorage)
+    let event = new Event('transactionInserted');
+    document.dispatchEvent(event);
 }
 
-coinSearch.addEventListener("keyup", ()=>{
-    if(coinSearch.value.length>0){
-    document.querySelector(".results-coinlist").classList.add("show");
-    render(coinSearch.value);}
-    else{document.querySelector(".results-coinlist").classList.remove("show");
-    document.querySelector(".results-coinlist").innerHTML="";
-    }
-});
 
+const saveButton = document.querySelector("#new-transaction");
+saveButton.addEventListener("submit", event => {
+    event.preventDefault();
+const walletId = document.querySelector("#portfolio-dropdown").value;
+const coin = document.querySelector("#search-coin").value;
+const amount = document.querySelector("#amount").value;
+const purchasePrice = document.querySelector("#purchase-price").value;
+const type = document.querySelector(".transaction-buttons .active").id;
+const transaction = {
+    walletId,
+    type,
+    coin,
+    purchasePrice,
+    amount
+}
+updateTransactions(transaction);
+})
