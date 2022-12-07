@@ -1,7 +1,7 @@
 let storage = window.localStorage;
 let portfolioStorage = JSON.parse(storage.getItem('portfolios'));
 let transactionStorage = JSON.parse(storage.getItem('transactions'));
-import { calculatePnL, calculateTotalWorth } from "./calculations.js";
+import { calculatePnL, calculatePnLDollars, calculateTotalWorth } from "./calculations.js";
 import {getCoin} from "/src/helpers/fetches.js";
 
 const addPortofolioButton = document.querySelector(".btn-list");
@@ -12,6 +12,7 @@ const portfolioDropdown = document.querySelector("#portfolio-dropdown");
 
 document.addEventListener('transactionInserted', ()=> {
   transactionStorage = JSON.parse(storage.getItem('transactions'));
+  updatePortfolioData();
 })
 
 addPortofolioButton.addEventListener("click", ()=> {
@@ -47,25 +48,66 @@ if(portfolioStorage){
 }
 
 const filterTransactions = (walletId) => {
- return transactionStorage.filter(transaction => transaction.walletId === walletId.toLowerCase())
-
+  if(!transactionStorage) return [];
+  return transactionStorage.filter(transaction => transaction.walletId === walletId.toLowerCase());
 }
 
 const updatePortfolioData = () => {
-const currentPortfolio = document.querySelector(".portfolio-list.active").innerHTML;
-const walletTransactions = filterTransactions(currentPortfolio)
-console.log(getCoin);
-let updatedTransaction = walletTransactions.map(item => {
-   item.currentPrice = getCoin(item.coin.toLowerCase()).current_price;
-   return item;
-  })
-console.log(calculateTotalWorth(updatedTransaction));
-let totalWorthElement = document.querySelector("#total-worth");
-let allPLElement = document.querySelector("#all-pl");
-let {total, totalInvested} = calculateTotalWorth(updatedTransaction)
-totalWorthElement.innerHTML= Math.round(total * 100)/ 100 + "$";
-allPLElement.innerHTML = Math.round(calculatePnL(total, totalInvested)*100) /100 + "%";
 
+  const currentPortfolio = document.querySelector(".portfolio-list.active").innerHTML;
+  const walletTransactions = filterTransactions(currentPortfolio);
+
+  let updatedTransaction = walletTransactions.map(item => {
+    item.currentPrice = getCoin(item.coin.toLowerCase()).current_price;
+    return item;
+    }) 
+  let totalWorthElement = document.querySelector("#total-worth");
+  let allPLElement = document.querySelector("#all-pl-percentage");
+  let allPLDollarsElement = document.querySelector("#all-pl-dollar");
+  let {total, totalInvested} = calculateTotalWorth(updatedTransaction)
+  totalWorthElement.innerHTML= Math.round(total * 100)/ 100 + "$";
+  allPLElement.innerHTML = Math.round(calculatePnL(total, totalInvested)*100) /100 + "%";
+  allPLDollarsElement.innerHTML = Math.round(calculatePnLDollars(total, totalInvested) * 100)/100 + "$";
+  updateHoldingsTable(mergeTransactionByCoin(updatedTransaction));
+}
+
+const mergeTransactionByCoin = (transactions)=>{
+  let holdings = [];
+  transactions.forEach(transaction => {
+    const {total, totalInvested} = calculateTotalWorth([transaction])
+      console.log(total, totalInvested)
+    let foundHolding = holdings.find(holding => holding.coin === transaction.coin);
+    if(foundHolding){
+      foundHolding.amount += transaction.amount;
+      foundHolding.total += total;
+      foundHolding.totalInvested += totalInvested;
+      foundHolding.allTimePnL = calculatePnL(foundHolding.total, foundHolding.totalInvested)
+    }else{
+      holdings.push({
+        coin: transaction.coin,
+        amount: transaction.amount,
+        currentPrice: transaction.currentPrice,
+        total,
+        totalInvested,
+        allTimePnL: calculatePnL(total, totalInvested)
+      })
+    }
+  }) 
+  return holdings;
+}
+
+const updateHoldingsTable = (holdings) => {
+    let holdingsData = document.querySelector("#holdings-data");
+    holdingsData.innerHTML="";
+    holdings.forEach(holding => { 
+      holdingsData.insertAdjacentHTML("beforeend", `<tr class="holdings-row">
+      <td scope="row">${holding.coin}</th>
+      <td>${holding.amount}</td>
+      <td id="current-price">${holding.currentPrice}</td>
+      <td>${holding.total}</td>
+      <td>${Math.round(holding.allTimePnL *100)/100} %</td>
+  </tr>`)
+    })
 }
 
 
@@ -93,3 +135,4 @@ addPortfolioForm.addEventListener("submit", event => {
 })
 
 checkList();
+updatePortfolioData();

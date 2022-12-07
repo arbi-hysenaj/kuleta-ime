@@ -167,13 +167,21 @@ h1, h2 {
 .container-table tbody tr{
     border-top: 1px solid rgb(232, 232, 232);
     font-weight: 300;
+    line-height: 15px;
 }
 
 .container-table td{
     padding: 10px 0px 10px 0px;
 }
 
+
 .container-table caption{
     text-align: left;
     margin-bottom: 20px;
+}
+
+.photoname{
+    display: flex;
+    align-items: center;
+    gap: 7px;
 }

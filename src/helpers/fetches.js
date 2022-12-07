@@ -21,7 +21,7 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=mark
         data.forEach(item=> {
             tableContent.insertAdjacentHTML("beforeend", `<tr>
                 <th scope="row">${item.market_cap_rank}</th>
-                <td>${item.name}</td>
+                <td><div class="photoname"><img src="${item.image}" width="26px"><div>${item.name}</div></div></td>
                 <td>${parseFloat(item.price_change_percentage_24h).toFixed(2)} %</td>
                 <td>${item.current_price}$</td>
                 <td>${item.market_cap.toLocaleString()} $</td>

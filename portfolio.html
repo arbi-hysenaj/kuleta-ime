@@ -39,7 +39,7 @@
             <div class="tracking-data active" id="all-assets">
                 <div class="tracking-container">
                     <div id="total-worth" class="current-net-worth">
-                        1000$
+                        0$
                     </div>
                     <div class="add-transaction">
                         <ul>
@@ -48,7 +48,8 @@
                     </div>
                 </div>
                 <div id="all-pl" class="all-time-pl">
-                    0%
+                   <span id="all-pl-dollar">0$</span> 
+                   <span id="all-pl-percentage">0%</span>
                 </div>
 
                 <div class="transaction-table">
@@ -64,14 +65,7 @@
                                 </tr>
                             </thead>
             
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Bitcoin</th>
-                                    <td>1</td>
-                                    <td id="current-price">16230 $</td>
-                                    <td>24523 $</td>
-                                    <td>13,5 %</td>
-                                </tr>
+                            <tbody id="holdings-data">
                             </tbody>
                     
                     </table>
@@ -108,9 +102,9 @@
 
 
                 <label for="amount">AMOUNT</label>
-                <input id="amount" type="number" placeholder="Amount" autocomplete="off">
+                <input id="amount" type="number" placeholder="Amount" step="0.01" min="0" autocomplete="off">
                 <label for="purchase-price">PRICE</label>
-                <input id="purchase-price" type="number" placeholder="Price" autocomplete="off" >
+                <input id="purchase-price" type="number" placeholder="Price" step="0.01" min="0" autocomplete="off" >
                 <div class="popup-buttons">
                     <input type="submit" value="SAVE" id="save-button" class="btn-save">
                         <ul>

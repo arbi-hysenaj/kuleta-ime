@@ -47,8 +47,14 @@ padding: 3px 0px;
     cursor: pointer;
 }
 
+
 .all-time-pl{
-    display: block;
-    padding-left: 15px;
-    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    width: 161px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 2rem;;
+    margin-top: -25px;
+    padding-left: 3px;
 }
