@@ -12,7 +12,7 @@ buyButton.addEventListener("click", () => {
 
 sellButton.addEventListener("click", ()=>{
     if(buyButton.classList.contains("active")){
-        buyButton.classList.remove("active") 
+        buyButton.classList.remove("active")
     } 
     sellButton.classList.add("active")
 })
@@ -39,7 +39,6 @@ const updateTransactions = (transaction) => {
     let event = new Event('transactionInserted');
     document.dispatchEvent(event);
 }
-
 
 const saveButton = document.querySelector("#new-transaction");
 saveButton.addEventListener("submit", event => {

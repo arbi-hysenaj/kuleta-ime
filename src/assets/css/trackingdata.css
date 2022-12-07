@@ -4,7 +4,7 @@
     --primary-3: #dabb94;
     --specific-1: #efae5f;
     --primary-4: #f3dabc;
-    --primary-5: #fefaf6;
+    --primary-5: #fffefe;
     --neutral-1: #2c2c2c;
 }
 
@@ -21,24 +21,22 @@
 }
 
 .add-transaction{
-margin-left: auto;
-margin-right: 150px;
-margin-top: 50px;
-/* max-height: 20px; */
-
+    margin-left: auto;
+    margin-right: 150px;
+    margin-top: 50px;
 }
+
 .add-transaction ul{
     list-style-type: none;
     overflow: hidden;
 }
 
 .add-transaction li{
-text-decoration: none;
-font-weight: 600;
-color:var(--primary-1);
-text-align: center;
-padding: 3px 0px;
-
+    text-decoration: none;
+    font-weight: 600;
+    color:var(--primary-1);
+    text-align: center;
+    padding: 3px 0px;
 }
 
 .add-transaction:hover li{
@@ -46,7 +44,6 @@ padding: 3px 0px;
     color: var(--specific-1);
     cursor: pointer;
 }
-
 
 .all-time-pl{
     display: flex;

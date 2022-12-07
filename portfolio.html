@@ -27,16 +27,15 @@
     <div id="page-grid">
         <div class="add-portfolio">
             <ul>
-            <div class="center-button">
-                <li class="btn-list">Add Portfolio</li>
-            </div>
-            <div class="line-break">
-            </div>
+                <div class="center-button">
+                    <li class="btn-list">Add Portfolio</li>
+                </div>
+                <div class="line-break"></div>
             </ul>
         </div>
 
         <div class="data-container">
-            <div class="tracking-data active" id="all-assets">
+            <div id="all-assets">
                 <div class="tracking-container">
                     <div id="total-worth" class="current-net-worth">
                         0$
@@ -47,7 +46,7 @@
                         </ul>  
                     </div>
                 </div>
-                <div id="all-pl" class="all-time-pl">
+                <div class="all-time-pl">
                    <span id="all-pl-dollar">0$</span> 
                    <span id="all-pl-percentage">0%</span>
                 </div>
@@ -55,32 +54,29 @@
                 <div class="transaction-table">
                     <table>
                         <caption>HOLDINGS</caption>
-                            <thead>
-                                <tr>
-                                    <th scope="col">NAME</th>
-                                    <th scope="col">AMOUNT</th>
-                                    <th scope="col">PRICE</th>
-                                    <th scope="col">TOTAL</th>
-                                    <th scope="col">ALL TIME P/L</th>
-                                </tr>
-                            </thead>
+                        <thead>
+                            <tr>
+                                <th scope="col">NAME</th>
+                                <th scope="col">AMOUNT</th>
+                                <th scope="col">PRICE</th>
+                                <th scope="col">TOTAL</th>
+                                <th scope="col">ALL TIME P/L</th>
+                            </tr>
+                        </thead>
             
-                            <tbody id="holdings-data">
-                            </tbody>
-                    
+                        <tbody id="holdings-data">
+                        </tbody>
                     </table>
                 </div>
-
             </div>
-
         </div>
 
         <div class="portfolios-list">
             <ul id="asset-list">
-            <li><img src="/src/assets/images/portfolio_aicon.png" width="21px">&nbsp;&nbsp;&nbsp;<button class="portfolio-list active" id="all-assets">All Assets</button></li>
+                <li><img src="/src/assets/images/portfolio_aicon.png" width="21px">&nbsp;&nbsp;&nbsp;<button class="portfolio-list active" id="all-assets">All Assets</button></li>
             </ul>
         </div>
-   </div>
+    </div>
 
 
     <div class="transaction-popup">
@@ -100,7 +96,6 @@
                     <input id="search-coin" type="text" name="coin" placeholder="Coin">
                 </div>
 
-
                 <label for="amount">AMOUNT</label>
                 <input id="amount" type="number" placeholder="Amount" step="0.01" min="0" autocomplete="off">
                 <label for="purchase-price">PRICE</label>
@@ -115,9 +110,6 @@
             </form>
         </div>
     </div>
-
-
-
 
     <div class="bg-popup">
         <div class="popup-content">

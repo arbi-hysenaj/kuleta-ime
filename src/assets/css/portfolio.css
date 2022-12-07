@@ -4,7 +4,7 @@
     --primary-3: #dabb94;
     --specific-1: #efae5f;
     --primary-4: #f3dabc;
-    --primary-5: #fefaf6;
+    --primary-5: #fffefe;
     --neutral-1: #2c2c2c;
 }
 
@@ -16,7 +16,6 @@
     height: 91vh;
     grid-template-columns: 30% 70%;
     grid-template-rows: 1fr 3fr;
-    
 }
 
 .data-container{
@@ -25,18 +24,6 @@
     grid-row-start: 1;
     grid-row-end: 3;
     display: block;
-
-}
-
-.tracking-data.active{
-
-    display:block;
-    margin-top: 30px;
-    height: 100%;
-}
-
-.tracking-data{
-    display: none;
 }
 
 .add-portfolio{
@@ -55,6 +42,7 @@
 .portfolio-list{
     all: unset;
 }
+
 
 .center-button{
     display: flex;
@@ -90,13 +78,12 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    }
+}
 
 .portfolios-list ul{
     justify-content: center;    
     justify-items: center;
     list-style-type: none;
-
 }
 
 .portfolios-list li{
@@ -142,7 +129,7 @@
 
 .bg-popup.show{
     transform: translateX(0);
-  }
+}
 
 .popup-content{
     width: 400px;
@@ -156,8 +143,8 @@ label{
     margin: 35px 0px 10px 35px ;
     font-size: 14px;
     font-weight: 600;
-    
 }
+
 #portfolio-name{
     display:block;
     margin: 10px 0px 0px 20px;
@@ -175,23 +162,23 @@ label{
     border: none;
     border-left: 7px solid #a7a7a7;
     border-radius: 9px;
-  }
+}
 
 .bg-popup input:not(.btn-save):focus {
     outline: none;
     border-left: 7px solid var(--primary-2);
-  }
+}
 
 .bg-popup::placeholder {
     color: var(--primary-3);
-  }
+}
 
 .popup-buttons{
     display: block;
     margin-top: 35px;
     justify-content:right;
-    
 }
+
 .popup-buttons li{
     list-style-type: none;
 }
@@ -224,8 +211,8 @@ label{
 .popup-buttons ul{
     display: inline-block;
     padding: 0;
-    
 }
+
 .btn-cancel {
     border-radius: 18px;
     margin-left: 20px;

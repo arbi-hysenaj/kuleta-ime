@@ -4,7 +4,7 @@
     --primary-3: #dabb94;
     --specific-1: #efae5f;
     --primary-4: #f3dabc;
-    --primary-5: #fefaf6;
+    --primary-5: #fffefe;
     --neutral-1: #2c2c2c;
 }
 
@@ -57,13 +57,16 @@
 .transaction-button:hover.buy{
     color: rgb(0, 179, 0);
 }
+
 .transaction-button.buy.active{
     border: 1px solid rgb(0, 179, 0);
     color: rgb(0, 179, 0);
 }
+
 .transaction-button:hover.sell{
     color: rgb(214, 0, 0);
 }
+
 .transaction-button.sell.active{
     border: 1px solid rgb(214, 0, 0);
     color: rgb(214, 0, 0);
@@ -121,7 +124,6 @@
     margin-bottom: 14px;
 }
 
-
 .btn-cancel-transaction {
     border-radius: 18px;
     margin-left: 20px;
@@ -176,18 +178,20 @@
     top: 120%;
     left: 0;
     right: 0;
-  }
-  .autocomplete-items div {
+}
+
+.autocomplete-items div {
     padding: 10px;
     cursor: pointer;
     background-color: #f5f5f5;
     border-radius: 9px;
 }
-  .autocomplete-items div:hover {
+
+.autocomplete-items div:hover {
     background-color: #e9e9e9;
-  }
-  .autocomplete-active {
-    /*when navigating through the items using the arrow keys:*/
-    background-color: DodgerBlue !important;
-    color: #ffffff;
-  }
+}
+
+.autocomplete-active {
+    background-color: rgb(214, 214, 214) !important;
+    color: var(--neutral-1);
+}
