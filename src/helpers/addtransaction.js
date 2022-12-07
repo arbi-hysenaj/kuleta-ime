@@ -1,5 +1,3 @@
-import {coins} from "./coins.js"
-
 const buyButton = document.querySelector("#buy");
 const sellButton = document.querySelector("#sell");
 let storage = window.localStorage;
@@ -14,7 +12,7 @@ buyButton.addEventListener("click", () => {
 
 sellButton.addEventListener("click", ()=>{
     if(buyButton.classList.contains("active")){
-        buyButton.classList.remove("active")
+        buyButton.classList.remove("active") 
     } 
     sellButton.classList.add("active")
 })
