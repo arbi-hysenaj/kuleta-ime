@@ -2,7 +2,7 @@ let storage = window.localStorage;
 let portfolioStorage = JSON.parse(storage.getItem('portfolios'));
 let transactionStorage = JSON.parse(storage.getItem('transactions'));
 import { calculatePnL, calculatePnLDollars, calculateTotalWorth } from "./calculations.js";
-import {getCoin} from "/src/helpers/fetches.js";
+import {getCoin, fetchData} from "/src/helpers/fetches.js";
 
 const addPortofolioButton = document.querySelector(".btn-list");
 const popup = document.querySelector(".bg-popup");
@@ -28,7 +28,7 @@ buttonCancel.addEventListener("click", () => {
 
 const updatePortfolioList = ({id , name}) => {   
     assetList.insertAdjacentHTML("beforeend",  
-    `<li><img src="/src/assets/images/portfolio_icon.png" width="21px">&nbsp;&nbsp;&nbsp;<button class="portfolio-list" data-content="#${id}">${name}</button></li>`);
+    `<li><img src="/src/assets/images/portfolio_icon.png" width="21px">&nbsp;&nbsp;&nbsp;<button class="portfolio-list" id="${id}">${name}</button></li>`);
     portfolioDropdown.insertAdjacentHTML("beforeend", `<option value="${id}">${name}</option>`)
 }
 
@@ -49,18 +49,25 @@ if(portfolioStorage){
 
 const filterTransactions = (walletId) => {
   if(!transactionStorage) return [];
+  console.log(walletId, 'walletid')
+  if(walletId === 'all-assets') return transactionStorage;
   return transactionStorage.filter(transaction => transaction.walletId === walletId.toLowerCase());
 }
 
+await fetchData();
+
 const updatePortfolioData = () => {
-
-  const currentPortfolio = document.querySelector(".portfolio-list.active").innerHTML;
+  const currentPortfolio = document.querySelector(".portfolio-list.active").id;
   const walletTransactions = filterTransactions(currentPortfolio);
+  console.log(walletTransactions), '';
 
-  let updatedTransaction = walletTransactions.map(item => {
-    item.currentPrice = getCoin(item.coin.toLowerCase()).current_price;
+  let updatedTransaction = walletTransactions.map((item) => {
+    const {current_price, image} = getCoin(item.coin.toLowerCase());
+    console.log(getCoin(item.coin.toLowerCase()), image ,'kk');
+    item.currentPrice = current_price;
+    item.image = image;
     return item;
-    }) 
+  }) 
   let totalWorthElement = document.querySelector("#total-worth");
   let allPLElement = document.querySelector("#all-pl-percentage");
   let allPLDollarsElement = document.querySelector("#all-pl-dollar");
@@ -87,6 +94,7 @@ const mergeTransactionByCoin = (transactions)=>{
         coin: transaction.coin,
         amount: transaction.amount,
         currentPrice: transaction.currentPrice,
+        image: transaction.image,
         total,
         totalInvested,
         allTimePnL: calculatePnL(total, totalInvested)
@@ -101,7 +109,7 @@ const updateHoldingsTable = (holdings) => {
     holdingsData.innerHTML="";
     holdings.forEach(holding => { 
       holdingsData.insertAdjacentHTML("beforeend", `<tr class="holdings-row">
-      <td scope="row">${holding.coin}</th>
+      <td><div class="photoname"><img src="${holding.image}" width="26px"><div>${holding.coin}</div></div></td>
       <td>${holding.amount}</td>
       <td id="current-price">${holding.currentPrice}</td>
       <td>${holding.total}</td>
