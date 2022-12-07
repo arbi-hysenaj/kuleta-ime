@@ -11,3 +11,7 @@ export const calculatePnL = (total, totalInvested) =>{
     return ((total-totalInvested)/ totalInvested ) *100; 
 }
 
+export const calculatePnLDollars = (total, totalInvested) => {
+    return (total - totalInvested);
+}
+

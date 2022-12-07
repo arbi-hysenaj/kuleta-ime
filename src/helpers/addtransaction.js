@@ -46,17 +46,20 @@ const updateTransactions = (transaction) => {
 const saveButton = document.querySelector("#new-transaction");
 saveButton.addEventListener("submit", event => {
     event.preventDefault();
-const walletId = document.querySelector("#portfolio-dropdown").value;
-const coin = document.querySelector("#search-coin").value;
-const amount = document.querySelector("#amount").value;
-const purchasePrice = document.querySelector("#purchase-price").value;
-const type = document.querySelector(".transaction-buttons .active").id;
-const transaction = {
-    walletId,
-    type,
-    coin,
-    purchasePrice,
-    amount
-}
-updateTransactions(transaction);
+    const walletId = document.querySelector("#portfolio-dropdown").value;
+    const coin = document.querySelector("#search-coin").value;
+    const amount = JSON.parse(document.querySelector("#amount").value);
+    const purchasePrice = document.querySelector("#purchase-price").value;
+    const type = document.querySelector(".transaction-buttons .active").id;
+    const transaction = {
+        walletId,
+        type,
+        coin,
+        purchasePrice,
+        amount
+    }
+    updateTransactions(transaction);
+    document.querySelector(".transaction-popup").classList.remove("show");
+
+
 })
