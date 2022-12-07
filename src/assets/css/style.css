@@ -4,7 +4,7 @@
     --primary-3: #dabb94;
     --specific-1: #efae5f;
     --primary-4: #f3dabc;
-    --primary-5: #fefaf6;
+    --primary-5: #fffefe;
     --neutral-1: #2c2c2c;
 }
 
@@ -22,6 +22,7 @@ body {
     display: flex;
     align-items: center;
 }
+
 #navbar a{
     padding-left: 20px;
 }
@@ -107,7 +108,7 @@ h1, h2 {
     background-color: #efdfca;
 }
 
-.market{
+.market-h3{
     margin:0
 }
 

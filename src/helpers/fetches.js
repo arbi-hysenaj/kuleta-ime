@@ -16,7 +16,6 @@ const tableContent= document.querySelector("#table-content");
 const fetchData = async () => {
     let response = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h")
             const data = await response.json()
-            console.log(tableContent, 'dataaaaa');    
             market = data;
                 if(tableContent){
                     tableContent.innerHTML= "";
@@ -24,24 +23,19 @@ const fetchData = async () => {
                     tableContent.insertAdjacentHTML("beforeend", `<tr>
                         <th scope="row">${item.market_cap_rank}</th>
                         <td><div class="photoname"><img src="${item.image}" width="26px"><div>${item.name}</div></div></td>
-                        <td>${parseFloat(item.price_change_percentage_24h).toFixed(2)} %</td>
-                        <td>${item.current_price}$</td>
-                        <td>${item.market_cap.toLocaleString()} $</td>
-                        <td>${item.total_volume.toLocaleString()} $</td>
+                        <td>${parseFloat(item.price_change_percentage_24h).toFixed(2)}%</td>
+                        <td><strong>${item.current_price}</strong>$</td>
+                        <td>$${item.market_cap.toLocaleString()}</td>
+                        <td>$${item.total_volume.toLocaleString()} </td>
                         </tr>`)
-                })
-            }
-        
+                    })
+                }
 }
+
 if(tableContent) fetchData();
 
-
-
 const getCoin = (coinId) => {
-    console.log(market, 'marketiiii');
     return market.find(coin => coin.id === coinId);
-    
 }
-
 
 export {market, getCoin, fetchData};

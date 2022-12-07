@@ -18,11 +18,10 @@ document.addEventListener('transactionInserted', ()=> {
 addPortofolioButton.addEventListener("click", ()=> {
     popup.classList.add("show");
     document.querySelector("#portfolio-name").value = "";
-
- })
+})
 
 const buttonCancel = document.querySelector(".btn-cancel");
-buttonCancel.addEventListener("click", () => {
+    buttonCancel.addEventListener("click", () => {
     popup.classList.remove("show");
 })
 
@@ -43,13 +42,12 @@ const insertPortfolios = (portfolio) => {
 
 if(portfolioStorage){
     portfolioStorage.forEach(portfolio => {
-        updatePortfolioList(portfolio)
+      updatePortfolioList(portfolio)
     })
 }
 
 const filterTransactions = (walletId) => {
   if(!transactionStorage) return [];
-  console.log(walletId, 'walletid')
   if(walletId === 'all-assets') return transactionStorage;
   return transactionStorage.filter(transaction => transaction.walletId === walletId.toLowerCase());
 }
@@ -59,11 +57,9 @@ await fetchData();
 const updatePortfolioData = () => {
   const currentPortfolio = document.querySelector(".portfolio-list.active").id;
   const walletTransactions = filterTransactions(currentPortfolio);
-  console.log(walletTransactions), '';
 
   let updatedTransaction = walletTransactions.map((item) => {
     const {current_price, image} = getCoin(item.coin.toLowerCase());
-    console.log(getCoin(item.coin.toLowerCase()), image ,'kk');
     item.currentPrice = current_price;
     item.image = image;
     return item;
@@ -82,7 +78,6 @@ const mergeTransactionByCoin = (transactions)=>{
   let holdings = [];
   transactions.forEach(transaction => {
     const {total, totalInvested} = calculateTotalWorth([transaction])
-      console.log(total, totalInvested)
     let foundHolding = holdings.find(holding => holding.coin === transaction.coin);
     if(foundHolding){
       foundHolding.amount += transaction.amount;
@@ -108,28 +103,29 @@ const updateHoldingsTable = (holdings) => {
     let holdingsData = document.querySelector("#holdings-data");
     holdingsData.innerHTML="";
     holdings.forEach(holding => { 
-      holdingsData.insertAdjacentHTML("beforeend", `<tr class="holdings-row">
+      holdingsData.insertAdjacentHTML("beforeend", 
+      `<tr class="holdings-row">
       <td><div class="photoname"><img src="${holding.image}" width="26px"><div>${holding.coin}</div></div></td>
       <td>${holding.amount}</td>
       <td id="current-price">${holding.currentPrice}</td>
       <td>${holding.total}</td>
       <td>${Math.round(holding.allTimePnL *100)/100} %</td>
-  </tr>`)
+      </tr>`)
     })
 }
 
 
 
 const checkList = () =>{
-    const portfoliosList = document.querySelectorAll(".portfolios-list .portfolio-list");
-    portfoliosList.forEach(portfolioList => {
+  const portfoliosList = document.querySelectorAll(".portfolios-list .portfolio-list");
+  portfoliosList.forEach(portfolioList => {
         portfolioList.addEventListener("click", event => {
             document.querySelector(".portfolio-list.active").classList.remove("active");
             event.currentTarget.classList.add("active")
             updatePortfolioData();
         })
-    })
-  }
+  })
+}
 
 
 addPortfolioForm.addEventListener("submit", event => {
