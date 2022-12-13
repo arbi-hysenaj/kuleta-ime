@@ -1,18 +1,27 @@
-export const calculateTotalWorth = (transactions) =>{
-    let total = 0, totalInvested = 0;
-    transactions.forEach(element => { 
-        total += (element.currentPrice * element.amount)
-        totalInvested += (element.purchasePrice * element.amount)
-    }); 
-    return {total, totalInvested};
+export const calculateTotalWorth = (transactions, currentValue = 0, worth = 0,currentPrice) =>{
     
+    transactions.forEach(element => { 
+        if(element.type === 'buy'){
+            currentPrice = element.currentPrice;
+            currentValue += (element.currentPrice * element.amount);
+            worth += (element.purchasePrice * element.amount);
+
+        }else{
+            currentValue -= (element.currentPrice * element.amount);
+            worth -= (element.purchasePrice * element.amount);
+        }            
+    }); 
+    return {currentValue, worth,currentPrice};
 }
 
-export const calculatePnL = (total, totalInvested) =>{
-    if(!total && !totalInvested) return 0;
-    return ((total-totalInvested)/ totalInvested ) *100; 
+export const calculatePnL = (currentValue, worth) =>{
+    if(!currentValue && !worth) return 0;
+    if(currentValue<0){
+        return (currentValue);
+    }
+        return ((currentValue-worth)/ worth ) *100; 
 }
-
-export const calculatePnLDollars = (total, totalInvested) => {
-    return (total - totalInvested);
+    
+export const calculatePnLDollars = (currentValue, worth) => {
+    return (currentValue - worth);
 }
