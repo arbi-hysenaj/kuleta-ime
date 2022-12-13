@@ -80,10 +80,9 @@ body {
 h1, h2 {
     text-align: center;
     margin-top: 35px ;
-    color: var(--neutral-1);
 }
 
-.container-data{
+.container-market-info{
     display: flex;
     justify-content: center;
 }
@@ -92,28 +91,73 @@ h1, h2 {
     width: 985px;
     display: flex;
     margin-top: 40px;
+    justify-content: space-between;
 }
 
 .btn-default{
     border-radius: 10px;
     font-size: 17px;
     font-weight: 600;
-    padding: 9px 100px 0px 100px;
+    padding: 17px 62px;
     text-decoration: none;
-    max-width: 120px;
+    min-width: 210px;
     text-align: center;
+    align-items: center;
     display: inline-block;
     border: none;
     color: var(--neutral-1);
-    background-color: #efdfca;
+    background-color: #ebe9e67d;
+    opacity: 0.9;
 }
 
-.market-h3{
-    margin:0
+.market-data-container{
+    height: 100%;
 }
 
-.market-volume{
-    margin-left: auto;
+.market-data-container h3{
+    margin:0px;
+}
+
+.percentage-btn{
+    display: inline-block;
+    font-size: 16px;
+    min-width: 45px;
+    padding: 10px 13px 9px 13px;
+    border-radius: 5px;
+    color: var(--neutral-1);
+    margin-right: 2px;
+}
+
+.percentage-btn.green{
+    background-color: rgba(77, 224, 92, 0.604);
+}
+
+.percentage-btn.red{
+    background-color: rgba(255, 33, 33, 0.604);
+}
+
+.percentage-text.green{
+    color: rgba(97, 214, 109, 0.828);
+}
+
+.percentage-text.red{
+    color: rgba(255, 33, 33, 0.604);
+}
+
+.list{
+    margin-top: 7px;
+}
+
+.market-data{
+    padding-top: 10px;
+}
+.market-data div{
+    display: inline-block;
+}
+
+#market-volume-result{
+    padding-left: 6px;
+    padding-top: 10px;
 }
 
 .container-table{
@@ -168,13 +212,12 @@ h1, h2 {
 .container-table tbody tr{
     border-top: 1px solid rgb(232, 232, 232);
     font-weight: 300;
-    line-height: 15px;
+    line-height: 25px;
 }
 
 .container-table td{
-    padding: 10px 0px 10px 0px;
+    padding: 5px 5px 5px 10px;
 }
-
 
 .container-table caption{
     text-align: left;
@@ -186,3 +229,4 @@ h1, h2 {
     align-items: center;
     gap: 7px;
 }
+

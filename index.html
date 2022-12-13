@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;600&display=swap" rel="stylesheet">
+    <script></script>
     
 </head>
 
@@ -25,16 +26,25 @@
     <h1>Track your Coin Price in Real Time</h1>
     <h2>With Kuleta, you can be in charge of your Cryptocurrency Investments. Everything in one interface. </h2>  
 
-    <div class="container-data">
+    <div class="container-market-info">
         <div class="market-info">
             <div class="btn-default">
-                <h3 class="market-h3">Market Cap</h3>
-                <p><span id="market-cap-result"></span></p>
+                <div class="market-data-container">
+                    <h3>Market Cap</h3>
+                    <div class="market-data">
+                        <div id="market-cap-percentage" class="percentage-btn"></div>
+                        <div id="market-cap-result"></div>
+                    </div>
+                </div>
             </div>
 
-            <div class="btn-default market-volume">
-                <h3 class="market-h3">Volume 24h</h3>
-                <p><span id="market-volume-result"></span></p>
+            <div class="btn-default">
+                <div class="market-data-container">
+                    <h3>Volume 24h</h3>
+                    <div class="market-data">
+                        <div id="market-volume-result"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -53,8 +63,7 @@
                     </tr>
                 </thead>
 
-                <tbody id="table-content">
-                </tbody>
+                <tbody id="table-content"></tbody>
         </table>
     </div>
     <script type="module" src="/src/helpers/fetches.js"></script>

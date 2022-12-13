@@ -3,6 +3,10 @@ const sellButton = document.querySelector("#sell");
 let storage = window.localStorage;
 let transactionStorage = storage.getItem('transactions');
 
+import autocomplete from "/src/helpers/autocomplete.js"
+import {coins} from "/src/helpers/coins.js"
+autocomplete(document.getElementById("search-coin"), coins);   
+
 buyButton.addEventListener("click", () => {
     if(sellButton.classList.contains("active")){
         sellButton.classList.remove("active")
@@ -43,11 +47,11 @@ const updateTransactions = (transaction) => {
 const saveButton = document.querySelector("#new-transaction");
 saveButton.addEventListener("submit", event => {
     event.preventDefault();
+    const type = document.querySelector(".transaction-buttons .active").id;    
+    const purchasePrice = document.querySelector("#purchase-price").value;
     const walletId = document.querySelector("#portfolio-dropdown").value;
     const coin = document.querySelector("#search-coin").value;
     const amount = JSON.parse(document.querySelector("#amount").value);
-    const purchasePrice = document.querySelector("#purchase-price").value;
-    const type = document.querySelector(".transaction-buttons .active").id;
     const transaction = {
         walletId,
         type,
@@ -57,6 +61,8 @@ saveButton.addEventListener("submit", event => {
     }
     updateTransactions(transaction);
     document.querySelector(".transaction-popup").classList.remove("show");
-
-
+    document.querySelector("#amount").value = "";        
+    document.querySelector("#purchase-price").value = "";  
+    document.querySelector("#search-coin").value = "";    
+ 
 })

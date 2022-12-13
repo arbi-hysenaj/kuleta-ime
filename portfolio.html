@@ -8,7 +8,7 @@
     <link rel="icon" href="/src/assets/images/bitcoin-wallet__1.png">
     <link rel="stylesheet" href="/src/assets/css/style.css">
     <link rel="stylesheet" href="/src/assets/css/portfolio.css">
-    <link rel="stylesheet" href="/src/assets/css/trackingdata.css">
+    <link rel="stylesheet" href="/src/assets/css/addportfoliopopup.css">
     <link rel="stylesheet" href="/src/assets/css/transactionpopup.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,17 +28,18 @@
         <div class="add-portfolio">
             <ul>
                 <div class="center-button">
-                    <li class="btn-list">Add Portfolio</li>
+                    <li class="add-portfolio-btn">Add Portfolio</li>
                 </div>
                 <div class="line-break"></div>
             </ul>
         </div>
 
         <div class="data-container">
-            <div id="all-assets">
-                <div class="tracking-container">
+            <div class="tracking-container">
+                <div class="tracking-container-upper">
                     <div id="total-worth" class="current-net-worth">
                         0$
+                        
                     </div>
                     <div class="add-transaction">
                         <ul>
@@ -47,28 +48,34 @@
                     </div>
                 </div>
                 <div class="all-time-pl">
-                   <span id="all-pl-dollar">0$</span> 
-                   <span id="all-pl-percentage">0%</span>
+                    <span id="all-pl-dollar" class="percentage-text">0$</span>
+                    <div>
+                    <div class="arrow"></div>
+                    <span id="all-pl-percentage" class="percentage-text">0%</span>
+                    
+                    </div> 
                 </div>
-
-                <div class="transaction-table">
-                    <table>
-                        <caption>HOLDINGS</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">NAME</th>
-                                <th scope="col">AMOUNT</th>
-                                <th scope="col">PRICE</th>
-                                <th scope="col">TOTAL</th>
-                                <th scope="col">ALL TIME P/L</th>
-                            </tr>
-                        </thead>
+        </div>
             
-                        <tbody id="holdings-data">
-                        </tbody>
-                    </table>
-                </div>
+
+            <div class="transaction-table">
+                <table>
+                    <caption>HOLDINGS</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">NAME</th>
+                            <th scope="col">AMOUNT</th>
+                            <th scope="col">PRICE</th>
+                            <th scope="col">CURRENT VALUE</th>
+                            <th scope="col">ALL TIME P/L</th>
+                        </tr>
+                    </thead>
+        
+                    <tbody id="holdings-data">
+                    </tbody>
+                </table>
             </div>
+            
         </div>
 
         <div class="portfolios-list">
@@ -129,12 +136,6 @@
 
     <script type="module" src="/src/helpers/addportfolio.js"></script>
     <script type="module" src="/src/helpers/addtransaction.js"></script>
-    <script type="module">
-        import autocomplete from "./src/helpers/autocomplete.js"
-        import {coins} from "./src/helpers/coins.js"
-        autocomplete(document.getElementById("search-coin"), coins);        
-    </script>
     
-
 </body>
 </html>

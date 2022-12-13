@@ -12,9 +12,6 @@ export const coins = [
     "coin": "BNB",
     },
     {
-    "coin": "USD Coin",
-    },
-    {
     "coin": "BUSD",
     },
     {
@@ -34,9 +31,6 @@ export const coins = [
     },
     {
     "coin": "Litecoin",
-    },
-    {
-    "coin": "Shiba Inu",
     },
     {
     "coin": "OKB",
@@ -60,22 +54,10 @@ export const coins = [
     "coin": "Chainlink",
     },
     {
-    "coin": "Leo Token",
-    },
-    {
-    "coin": "Cosmos Hub",
-    },
-    {
-    "coin": "Ethereum Classic",
-    },
-    {
     "coin": "Monero",
     },
     {
     "coin": "Stellar",
-     },
-    {
-    "coin": "Bitcoin Cash",
     },
     {
     "coin": "Quant",
@@ -93,13 +75,7 @@ export const coins = [
     "coin": "Apecoin",
     },
     {
-    "coin": "Near Protocol",
-    },
-    {
     "coin": "Vechain",
-    },
-    {
-    "coin": "Internet Computer",
     },
     {
     "coin": "Hedera",
@@ -108,31 +84,16 @@ export const coins = [
     "coin": "Flow",
     },
     {
-    "coin": "Terra Luna Classic",
-    },
-    {
     "coin": "EOS",
     },
     {
     "coin": "Frax",
     },
     {
-    "coin": "Trust Wallet",
-    },
-    {
-    "coin": "Sandbox",
-    },
-    {
     "coin": "Tezos",
     },
     {
-    "coin": "Axie Infinity",
-    },
-    {
     "coin": "Aave",
-    },
-    {
-    "coin": "Theta Network",
     },
     {
     "coin": "Chiliz",

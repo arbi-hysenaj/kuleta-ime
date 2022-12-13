@@ -108,6 +108,7 @@
     margin-left: 9px;
     margin-bottom: 15px;
     margin-top: 10px;
+    color: rgb(119, 113, 113);
 }
 
 #purchase-price{
@@ -122,6 +123,7 @@
     border: 1px solid rgb(217, 214, 214);
     margin-left: 10px;
     margin-bottom: 14px;
+    color: rgb(119, 113, 113);
 }
 
 .btn-cancel-transaction {
@@ -192,6 +194,6 @@
 }
 
 .autocomplete-active {
-    background-color: rgb(214, 214, 214) !important;
+    background-color: rgb(214, 214, 214) !;
     color: var(--neutral-1);
 }
